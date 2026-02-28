@@ -1,7 +1,7 @@
 const SHEET_ID = "13vSv0Mz4EUU10GxLjGkAWF_QW2soVzrW8I8v424qgCo";
 
 const SHEET_URL =
-  `https://docs.google.com/spreadsheets/d/${13vSv0Mz4EUU10GxLjGkAWF_QW2soVzrW8I8v424qgCo}/gviz/tq?tqx=out:json`;
+  `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json`;
 
 let sentences = [];
 
