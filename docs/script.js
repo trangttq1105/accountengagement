@@ -3,9 +3,10 @@ const SHEET_URL =
   `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json`;
 
 let sheetData = [];
-let dataLoaded = false; // ✅ check load
+let dataLoaded = false;
 
-// ===== Load Google Sheet =====
+
+// ===== Load Sheet =====
 fetch(SHEET_URL)
   .then(res => res.text())
   .then(text => {
@@ -15,9 +16,7 @@ fetch(SHEET_URL)
 
     console.log("Sheet loaded:", sheetData.length);
   })
-  .catch(err => {
-    console.error("Sheet load error:", err);
-  });
+  .catch(err => console.error(err));
 
 
 // ===== Random helper =====
@@ -26,20 +25,20 @@ function getRandomItems(arr, n) {
 }
 
 
-// ===== Generate button =====
+// ===== Generate =====
 document.getElementById("generateBtn").onclick = () => {
 
-  // ✅ Prevent early click
   if (!dataLoaded) {
-    alert("Data is still loading. Please wait 2–3 seconds.");
+    alert("Data still loading, wait a moment!");
     return;
   }
 
-  const postLink = document.getElementById("postLink").value.trim();
+  // ✅ FIXED ID HERE
+  const postLink = document.getElementById("tweetLink").value.trim();
   const customText = document.getElementById("customText").value.trim();
 
   if (!postLink) {
-    alert("Post link is required");
+    alert("Please paste X post link");
     return;
   }
 
@@ -64,9 +63,11 @@ document.getElementById("generateBtn").onclick = () => {
 
 #CatForCashEP7`;
 
+    const tweetId = extractTweetId(postLink);
+
     const replyUrl =
       "https://twitter.com/intent/tweet?in_reply_to=" +
-      extractTweetId(postLink) +
+      tweetId +
       "&text=" +
       encodeURIComponent(fullText);
 
