@@ -3,30 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <title>CFC Reply Generator</title>
+
+  <!-- Cute rounded font -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-<h1>CFC Reply Generator</h1>
-<p class="subtitle"><em>Fan Made Tool</em></p>
+<div class="container">
 
-<!-- X Link -->
-<h2>Paste X post link</h2>
-<input id="tweetLink"
-  placeholder="https://x.com/username/status/xxxxx"
-/>
+  <!-- HEADER -->
+  <h1 class="page-title">CFC Reply Generator</h1>
+  <div class="badge">By FirstKhaotung fan</div>
 
-<!-- Custom text -->
-<h2>Add your text (required)</h2>
-<input id="customText" maxlength="20" placeholder="your tag"/>
+  <!-- GUIDE CARD -->
+  <div class="card guide">
+    <h2>Usage Guide</h2>
 
-<br><br>
-<button id="generateBtn">Generate Replies</button>
+    <p><strong>How to use:</strong></p>
 
-<div id="result"></div>
+    <p>
+      1. Like and repost a post from official accounts
+      (<b>@CatForCash</b>, <b>@GMMTV</b>, <b>@TrueVisions</b>)
+      <strong>*MUST DO</strong>
+    </p>
+
+    <p>2. Copy the post link</p>
+
+    <ul>
+      <li>
+        Web browser:
+        <a href="https://i.imgur.com/ckZBbkE.png" target="_blank">
+          See example
+        </a>
+      </li>
+
+      <li>
+        Application:
+        <a href="https://i.imgur.com/PUNPp32_d.webp?maxwidth=760&fidelity=grand" target="_blank">
+          See example
+        </a>
+      </li>
+    </ul>
+
+    <p>3. Paste the post link into the box below</p>
+  </div>
+
+
+  <!-- INPUT CARD -->
+  <div class="card">
+
+    <h2>Paste X post link</h2>
+    <input
+      id="tweetLink"
+      placeholder="https://x.com/username/status/xxxxx"
+    />
+
+    <h2>Add your text (required)</h2>
+    <input
+      id="customText"
+      maxlength="20"
+      placeholder="your tag"
+    />
+
+    <br><br>
+
+    <button id="generateBtn" class="generate-btn">
+      Generate Replies
+    </button>
+
+  </div>
+
+  <!-- RESULT -->
+  <div id="result"></div>
+
+</div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
