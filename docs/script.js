@@ -76,7 +76,7 @@ document.getElementById("generateBtn").onclick = () => {
     const fullText =
 `${sentence} ${customText}
 
-#CatForCashEP7`;
+#CatForCashEP8`;
 
     const replyUrl =
 `https://twitter.com/intent/tweet?in_reply_to=${tweetId}&text=${encodeURIComponent(fullText)}`;
